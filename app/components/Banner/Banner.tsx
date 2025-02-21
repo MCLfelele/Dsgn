@@ -116,7 +116,7 @@ const Banner = () => {
                 Celebrating Femosh @ 40
               </h1>
               <p className="mt-6 text-lg leading-8 text-white">
-                Please fill the form below and the number of guest you're coming with
+                Please fill the form below and the number of guest you&aposre coming with
               </p>
               <div className="mt-8">
                 {/* Guest List Form and Display */}
