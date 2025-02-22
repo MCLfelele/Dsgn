@@ -143,9 +143,9 @@ const Banner = () => {
             </div>
           </div>
 
-          {/* Countdown Section (Below the video for mobile view) */}
-          <div className="mt-12 text-center md:hidden">
-            <h2 className="text-3xl font-bold text-white mb-4">Countdown</h2>
+          {/* Countdown Section (Below the video for mobile view, next to video for desktop) */}
+          <div className="mt-12 text-center md:flex md:justify-center md:items-center md:space-x-8">
+            <h2 className="text-3xl font-bold text-white mb-4 md:mb-0">Countdown</h2>
             <div className="flex justify-center space-x-4">
               <div className="text-center">
                 <span className="text-4xl font-bold text-white">{timeLeft.days}</span>
