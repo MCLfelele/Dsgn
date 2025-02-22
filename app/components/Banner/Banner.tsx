@@ -100,6 +100,29 @@ const Banner = () => {
     <main>
       <div className="px-6 lg:px-8 animated-gradient">
         <div className="mx-auto max-w-7xl pt-16 sm:pt-20 pb-20">
+          {/* Countdown Section (At the top in all views) */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">Countdown</h2>
+            <div className="flex justify-center space-x-4">
+              <div className="text-center">
+                <span className="text-4xl font-bold text-white">{timeLeft.days}</span>
+                <span className="block text-sm text-white">Days</span>
+              </div>
+              <div className="text-center">
+                <span className="text-4xl font-bold text-white">{timeLeft.hours}</span>
+                <span className="block text-sm text-white">Hours</span>
+              </div>
+              <div className="text-center">
+                <span className="text-4xl font-bold text-white">{timeLeft.minutes}</span>
+                <span className="block text-sm text-white">Minutes</span>
+              </div>
+              <div className="text-center">
+                <span className="text-4xl font-bold text-white">{timeLeft.seconds}</span>
+                <span className="block text-sm text-white">Seconds</span>
+              </div>
+            </div>
+          </div>
+
           {/* Grid container */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Video column (left) */}
@@ -139,29 +162,6 @@ const Banner = () => {
                 >
                   Guest List
                 </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Countdown Section (Below the video for mobile view, next to video for desktop) */}
-          <div className="mt-12 text-center md:flex md:justify-center md:items-center md:space-x-8">
-            <h2 className="text-3xl font-bold text-white mb-4 md:mb-0">Countdown</h2>
-            <div className="flex justify-center space-x-4">
-              <div className="text-center">
-                <span className="text-4xl font-bold text-white">{timeLeft.days}</span>
-                <span className="block text-sm text-white">Days</span>
-              </div>
-              <div className="text-center">
-                <span className="text-4xl font-bold text-white">{timeLeft.hours}</span>
-                <span className="block text-sm text-white">Hours</span>
-              </div>
-              <div className="text-center">
-                <span className="text-4xl font-bold text-white">{timeLeft.minutes}</span>
-                <span className="block text-sm text-white">Minutes</span>
-              </div>
-              <div className="text-center">
-                <span className="text-4xl font-bold text-white">{timeLeft.seconds}</span>
-                <span className="block text-sm text-white">Seconds</span>
               </div>
             </div>
           </div>
