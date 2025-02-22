@@ -124,7 +124,8 @@ const Banner = () => {
                   <h1 className="text-2xl font-bold mb-4">Guest List</h1>
                   <p className="text-lg mb-4">Total Guests: {totalGuests}</p>
                   <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="flex space-x-4">
+                    {/* Responsive flex container */}
+                    <div className="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
                       <input
                         type="text"
                         placeholder="Guest Name"
@@ -139,7 +140,7 @@ const Banner = () => {
                         value={numberOfGuests}
                         onChange={(e) => setNumberOfGuests(Number(e.target.value))}
                         min="1"
-                        className="w-24 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-white bg-transparent"
+                        className="w-full md:w-24 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-white bg-transparent"
                         required
                       />
                     </div>
