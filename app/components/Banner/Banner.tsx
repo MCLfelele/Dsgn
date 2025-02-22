@@ -105,7 +105,7 @@ const Banner = () => {
   {/* Background Image */}
   <div
     className="absolute inset-0 bg-cover bg-center z-0"
-    style={{ backgroundImage: "url('/public/assets/banner/count.jpg')" }}
+    style={{ backgroundImage: "url('/assets/banner/count.jpg')" }}
   ></div>
   {/* Overlay to darken the background image */}
   <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
@@ -163,10 +163,10 @@ const Banner = () => {
 
             {/* Text column (right) */}
             <div className="text-center md:text-left">
-              <h1 className="text-4xl font-semibold text-white sm:text-5xl lg:text-7xl align-center">
+              <h1 className="text-4xl font-semibold text-grey sm:text-5xl lg:text-7xl align-center">
                 Celebrating Femosh @ 40
               </h1>
-              <p className="mt-6 text-lg leading-8 text-white">
+              <p className="mt-6 text-lg leading-8 text-grey">
                 Join us for an unforgettable celebration!
               </p>
               {/* RSVP Button */}
