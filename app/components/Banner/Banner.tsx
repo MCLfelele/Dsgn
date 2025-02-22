@@ -103,32 +103,32 @@ const Banner = () => {
           {/* Countdown Section (At the top in all views) */}
           <div className="text-center mb-12">
   <h2 className="text-3xl font-bold text-white mb-8">Countdown</h2>
-  <div className="flex justify-center space-x-6">
+  <div className="flex justify-center space-x-4 md:space-x-6">
     {/* Days */}
     <div className="text-center">
-      <div className="w-24 h-24 flex items-center justify-center bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg shadow-lg border-2 border-white">
-        <span className="text-4xl font-bold text-white font-serif">{timeLeft.days}</span>
+      <div className="w-16 h-16 md:w-24 md:h-24 flex items-center justify-center bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg shadow-lg border-2 border-white">
+        <span className="text-2xl md:text-4xl font-bold text-white font-serif">{timeLeft.days}</span>
       </div>
       <span className="block text-sm text-white mt-2">Days</span>
     </div>
     {/* Hours */}
     <div className="text-center">
-      <div className="w-24 h-24 flex items-center justify-center bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg shadow-lg border-2 border-white">
-        <span className="text-4xl font-bold text-white font-serif">{timeLeft.hours}</span>
+      <div className="w-16 h-16 md:w-24 md:h-24 flex items-center justify-center bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg shadow-lg border-2 border-white">
+        <span className="text-2xl md:text-4xl font-bold text-white font-serif">{timeLeft.hours}</span>
       </div>
       <span className="block text-sm text-white mt-2">Hours</span>
     </div>
     {/* Minutes */}
     <div className="text-center">
-      <div className="w-24 h-24 flex items-center justify-center bg-gradient-to-br from-green-500 to-yellow-500 rounded-lg shadow-lg border-2 border-white">
-        <span className="text-4xl font-bold text-white font-serif">{timeLeft.minutes}</span>
+      <div className="w-16 h-16 md:w-24 md:h-24 flex items-center justify-center bg-gradient-to-br from-green-500 to-yellow-500 rounded-lg shadow-lg border-2 border-white">
+        <span className="text-2xl md:text-4xl font-bold text-white font-serif">{timeLeft.minutes}</span>
       </div>
       <span className="block text-sm text-white mt-2">Minutes</span>
     </div>
     {/* Seconds */}
     <div className="text-center">
-      <div className="w-24 h-24 flex items-center justify-center bg-gradient-to-br from-red-500 to-orange-500 rounded-lg shadow-lg border-2 border-white">
-        <span className="text-4xl font-bold text-white font-serif">{timeLeft.seconds}</span>
+      <div className="w-16 h-16 md:w-24 md:h-24 flex items-center justify-center bg-gradient-to-br from-red-500 to-orange-500 rounded-lg shadow-lg border-2 border-white">
+        <span className="text-2xl md:text-4xl font-bold text-white font-serif">{timeLeft.seconds}</span>
       </div>
       <span className="block text-sm text-white mt-2">Seconds</span>
     </div>
