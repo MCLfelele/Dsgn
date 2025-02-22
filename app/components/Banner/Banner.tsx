@@ -135,7 +135,7 @@ const Banner = () => {
                 {/* Guest List Button */}
                 <button
                   onClick={toggleGuestListModal}
-                  className="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors"
+                  className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors"
                 >
                   Guest List
                 </button>
@@ -171,7 +171,27 @@ const Banner = () => {
       {/* RSVP Modal */}
       {showRSVPModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full relative">
+            {/* Close (X) Button */}
+            <button
+              onClick={toggleRSVPModal}
+              className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
             <h2 className="text-2xl font-bold mb-4 text-black">RSVP Form</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <input
@@ -232,7 +252,27 @@ const Banner = () => {
       {/* Guest List Modal */}
       {showGuestListModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full relative">
+            {/* Close (X) Button */}
+            <button
+              onClick={toggleGuestListModal}
+              className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
             <h2 className="text-2xl font-bold mb-4 text-black">Guest List</h2>
             <p className="text-lg mb-4">Total Guests: {totalGuests}</p>
             <div className="space-y-4 max-h-[300px] overflow-y-auto">
@@ -265,12 +305,6 @@ const Banner = () => {
                 Clear All
               </button>
             )}
-            <button
-              onClick={toggleGuestListModal}
-              className="w-full mt-4 bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition-colors"
-            >
-              Close
-            </button>
           </div>
         </div>
       )}
