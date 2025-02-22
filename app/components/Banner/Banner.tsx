@@ -105,7 +105,7 @@ const Banner = () => {
   {/* Background Image */}
   <div
     className="absolute inset-0 bg-cover bg-center z-0"
-    style={{ backgroundImage: "url('/asset/banner/count.jpg')" }}
+    style={{ backgroundImage: "url('/public/assets/banner/count.jpg')" }}
   ></div>
   {/* Overlay to darken the background image */}
   <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
