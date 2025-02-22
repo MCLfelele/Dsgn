@@ -17,6 +17,7 @@ const Banner = () => {
   const [contactType, setContactType] = useState<"email" | "phone">("email");
   const [contactValue, setContactValue] = useState("");
   const [showRSVPModal, setShowRSVPModal] = useState(false);
+  const [showGuestListModal, setShowGuestListModal] = useState(false);
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -91,6 +92,10 @@ const Banner = () => {
     setShowRSVPModal(!showRSVPModal); // Toggle RSVP modal visibility
   };
 
+  const toggleGuestListModal = () => {
+    setShowGuestListModal(!showGuestListModal); // Toggle Guest List modal visibility
+  };
+
   return (
     <main>
       <div className="px-6 lg:px-8 animated-gradient">
@@ -120,19 +125,26 @@ const Banner = () => {
                 Join us for an unforgettable celebration!
               </p>
               {/* RSVP Button */}
-              <div className="mt-8">
+              <div className="mt-8 space-y-4">
                 <button
                   onClick={toggleRSVPModal}
                   className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors"
                 >
                   RSVP
                 </button>
+                {/* Guest List Button */}
+                <button
+                  onClick={toggleGuestListModal}
+                  className="w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition-colors"
+                >
+                  Guest List
+                </button>
               </div>
             </div>
           </div>
 
-          {/* Countdown Section (Below the video) */}
-          <div className="mt-12 text-center">
+          {/* Countdown Section (Below the video for mobile view) */}
+          <div className="mt-12 text-center md:hidden">
             <h2 className="text-3xl font-bold text-white mb-4">Countdown</h2>
             <div className="flex justify-center space-x-4">
               <div className="text-center">
@@ -217,43 +229,51 @@ const Banner = () => {
         </div>
       )}
 
-      {/* Guest List Display */}
-      <div className="mt-12 max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-md mx-auto p-6 rounded-lg shadow-md border border-white text-white">
-          <h1 className="text-2xl font-bold mb-4">Guest List</h1>
-          <p className="text-lg mb-4">Total Guests: {totalGuests}</p>
-          <div className="space-y-4 max-h-[300px] overflow-y-auto">
-            {guests.map((guest) => (
-              <div
-                key={guest.id}
-                className="flex items-center p-4 bg-gray-800 rounded-lg shadow-sm"
+      {/* Guest List Modal */}
+      {showGuestListModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+            <h2 className="text-2xl font-bold mb-4 text-black">Guest List</h2>
+            <p className="text-lg mb-4">Total Guests: {totalGuests}</p>
+            <div className="space-y-4 max-h-[300px] overflow-y-auto">
+              {guests.map((guest) => (
+                <div
+                  key={guest.id}
+                  className="flex items-center p-4 bg-gray-100 rounded-lg shadow-sm"
+                >
+                  <div className="w-10 h-10 flex items-center justify-center bg-blue-500 text-white rounded-full mr-4">
+                    {guest.name.charAt(0).toUpperCase()}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-black">{guest.name}</p>
+                    <p className="text-sm text-gray-600">
+                      {guest.numberOfGuests} guest(s)
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      {guest.contactType === "email" ? "Email" : "Phone"}: {guest.contactValue}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* Clear All Button */}
+            {guests.length > 0 && (
+              <button
+                onClick={handleClearAll}
+                className="w-full mt-4 bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors"
               >
-                <div className="w-10 h-10 flex items-center justify-center bg-blue-500 text-white rounded-full mr-4">
-                  {guest.name.charAt(0).toUpperCase()}
-                </div>
-                <div>
-                  <p className="font-semibold text-white">{guest.name}</p>
-                  <p className="text-sm text-white">
-                    {guest.numberOfGuests} guest(s)
-                  </p>
-                  <p className="text-sm text-white">
-                    {guest.contactType === "email" ? "Email" : "Phone"}: {guest.contactValue}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          {/* Clear All Button */}
-          {guests.length > 0 && (
+                Clear All
+              </button>
+            )}
             <button
-              onClick={handleClearAll}
-              className="w-full mt-4 bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors"
+              onClick={toggleGuestListModal}
+              className="w-full mt-4 bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition-colors"
             >
-              Clear All
+              Close
             </button>
-          )}
+          </div>
         </div>
-      </div>
+      )}
     </main>
   );
 };
